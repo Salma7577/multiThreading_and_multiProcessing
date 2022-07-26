@@ -1,10 +1,12 @@
+
+#required libraries
+#all are bulit-in libraries
 import time
 from threading import Thread
 from multiprocessing import Process
 
 
 COUNT = 200000000
-SLEEP = 10
 
 
 def task0(n):
@@ -18,15 +20,15 @@ if __name__ == '__main__':
     # task0(COUNT)
     # task0(COUNT)
 
-    # t1 = Thread(target=task0, args=(COUNT, ))
-    # t2 = Thread(target=task0, args=(COUNT, ))
+    # t1 = Thread(target=task0, args=[COUNT])
+    # t2 = Thread(target=task0, args=[COUNT])
     # t1.start()
     # t2.start()
     # t1.join()
     # t2.join()
 
-    p1 = Process(target=task0, args=(COUNT, ))
-    p2 = Process(target=task0, args=(COUNT, ))
+    p1 = Process(target=task0, args=[COUNT])
+    p2 = Process(target=task0, args=[COUNT])
     p1.start()
     p2.start()
     p1.join()
